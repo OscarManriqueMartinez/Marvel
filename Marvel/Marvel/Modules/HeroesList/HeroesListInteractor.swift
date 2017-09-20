@@ -14,6 +14,9 @@ protocol HeroesListInteractorInputProtocol: class {
      */
     
     func set(presenter: HeroesListInteractorOutputProtocol)
+    
+    func loadData()
+
 }
 
 
@@ -38,5 +41,14 @@ class HeroesListInteractor: HeroesListInteractorInputProtocol {
     func set(presenter: HeroesListInteractorOutputProtocol) {
         
         self.presenter = presenter
+    }
+    
+    func loadData() {
+        
+        dataManager?.getHeroes(success: {(heroes) in
+            
+        },failure: {error in
+
+        } )
     }
 }

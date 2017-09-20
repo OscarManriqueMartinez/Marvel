@@ -16,4 +16,7 @@ struct Constants {
     static let typeFileEnviroment = "plist"
     static let keyURLBase = "URLBase"
     
+    // MARK: - Subpath
+    static let subpathHeroes = "bins/bvyob"
+    
 }

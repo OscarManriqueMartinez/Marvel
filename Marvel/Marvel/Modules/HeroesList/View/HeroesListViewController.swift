@@ -31,6 +31,8 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter?.loadData()
     }
     
     

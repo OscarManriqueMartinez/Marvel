@@ -25,6 +25,10 @@
 		3F3852701F72EA65008F2F41 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38526F1F72EA65008F2F41 /* String+Util.swift */; };
 		3F3852771F72ECE3008F2F41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F3852751F72ECE3008F2F41 /* Localizable.strings */; };
 		3F38527B1F72EDC0008F2F41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F3852791F72EDC0008F2F41 /* Localizable.strings */; };
+		3F38527E1F72EFD5008F2F41 /* Heroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38527C1F72EFD5008F2F41 /* Heroes.swift */; };
+		3F38527F1F72EFD5008F2F41 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F38527D1F72EFD5008F2F41 /* Hero.swift */; };
+		3F3852811F72EFF0008F2F41 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3852801F72EFF0008F2F41 /* Error.swift */; };
+		3F3852831F72F40F008F2F41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3852821F72F40F008F2F41 /* LaunchScreen.xib */; };
 		604E15BD9E1F1C61B46FD384 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7D1B671C5BF01CDD43FF19 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		3F38526F1F72EA65008F2F41 /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		3F3852761F72ECE3008F2F41 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
 		3F38527A1F72EDC0008F2F41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		3F38527C1F72EFD5008F2F41 /* Heroes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroes.swift; sourceTree = "<group>"; };
+		3F38527D1F72EFD5008F2F41 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		3F3852801F72EFF0008F2F41 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		3F3852821F72F40F008F2F41 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		4A7D1B671C5BF01CDD43FF19 /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF8D4D24BDE7D22D0A9EC49 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		71DC4DDDB5635B64B797C4CE /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,13 +180,13 @@
 		3F3852511F72E895008F2F41 /* HeroesList */ = {
 			isa = PBXGroup;
 			children = (
+				3F3852571F72E895008F2F41 /* Model */,
+				3F3852581F72E895008F2F41 /* View */,
 				3F3852521F72E895008F2F41 /* HeroesListAPIClient.swift */,
 				3F3852531F72E895008F2F41 /* HeroesListDataManager.swift */,
 				3F3852541F72E895008F2F41 /* HeroesListInteractor.swift */,
 				3F3852551F72E895008F2F41 /* HeroesListPresenter.swift */,
 				3F3852561F72E895008F2F41 /* HeroesListWireframe.swift */,
-				3F3852571F72E895008F2F41 /* Model */,
-				3F3852581F72E895008F2F41 /* View */,
 			);
 			path = HeroesList;
 			sourceTree = "<group>";
@@ -186,6 +194,8 @@
 		3F3852571F72E895008F2F41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F38527C1F72EFD5008F2F41 /* Heroes.swift */,
+				3F38527D1F72EFD5008F2F41 /* Hero.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				3F3852661F72E8C0008F2F41 /* BaseAPIClient.swift */,
+				3F3852801F72EFF0008F2F41 /* Error.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 			children = (
 				3F3852721F72EC81008F2F41 /* Localization */,
 				3F3852141F72E4AD008F2F41 /* Assets.xcassets */,
+				3F3852821F72F40F008F2F41 /* LaunchScreen.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -410,6 +422,7 @@
 				3F3852601F72E895008F2F41 /* HeroesListView.xib in Resources */,
 				3F3852771F72ECE3008F2F41 /* Localizable.strings in Resources */,
 				3F3852151F72E4AD008F2F41 /* Assets.xcassets in Resources */,
+				3F3852831F72F40F008F2F41 /* LaunchScreen.xib in Resources */,
 				3F38526E1F72E99F008F2F41 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,7 +505,10 @@
 				3F38525D1F72E895008F2F41 /* HeroesListInteractor.swift in Sources */,
 				3F38520E1F72E4AD008F2F41 /* AppDelegate.swift in Sources */,
 				3F38525B1F72E895008F2F41 /* HeroesListAPIClient.swift in Sources */,
+				3F38527E1F72EFD5008F2F41 /* Heroes.swift in Sources */,
 				3F3852671F72E8C0008F2F41 /* BaseAPIClient.swift in Sources */,
+				3F38527F1F72EFD5008F2F41 /* Hero.swift in Sources */,
+				3F3852811F72EFF0008F2F41 /* Error.swift in Sources */,
 				3F38526C1F72E984008F2F41 /* Enviroment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Marvel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscar.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -667,6 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Marvel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oscar.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";

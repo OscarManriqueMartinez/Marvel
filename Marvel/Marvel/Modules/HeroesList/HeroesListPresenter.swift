@@ -12,6 +12,8 @@ protocol HeroesListPresenterProtocol: class {
     /**
      * Add here your methods for communication VIEW -> PRESENTER
      */
+    
+    func loadData()
 }
 
 protocol HeroesListInteractorOutputProtocol: class {
@@ -44,6 +46,10 @@ class HeroesListPresenter: HeroesListPresenterProtocol, HeroesListInteractorOutp
     
     // MARK: - HeroesListPresenterProtocol
     
+    func loadData() {
+        
+        interactor?.loadData()
+    }
     
     
     // MARK: - HeroesListInteractorOutputProtocol

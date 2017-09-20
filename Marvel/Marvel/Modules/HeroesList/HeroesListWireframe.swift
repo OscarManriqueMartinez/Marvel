@@ -22,7 +22,7 @@ class HeroesListWireframe: HeroesListWireframeProtocol {
     
     // MARK: - Properties
     
-    private var viewController: HeroesListViewController {
+    var viewController: HeroesListViewController {
         
         // Generating module components
         let viewController: HeroesListViewController = HeroesListViewController(nibName: "HeroesListView", bundle: nil)
