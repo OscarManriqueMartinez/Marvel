@@ -21,6 +21,10 @@ protocol HeroesListInteractorOutputProtocol: class {
     /**
      * Add here your methods for communication INTERACTOR -> PRESENTER
      */
+    
+    func show(heroes:[Hero])
+    
+    func show(error:BaseError)
 }
 
 
@@ -54,5 +58,19 @@ class HeroesListPresenter: HeroesListPresenterProtocol, HeroesListInteractorOutp
     
     // MARK: - HeroesListInteractorOutputProtocol
     
+    func show(heroes:[Hero]) {
+        
+        var heroViewModel:[HeroViewModel] = []
+        
+        for hero in heroes{
+            heroViewModel.append(HeroViewModel(hero: hero))
+        }
+        
+        view?.show(heroes:heroViewModel)
+    }
     
+    func show(error:BaseError) {
+        
+        view?.show(error: error.description())
+    }
 }

@@ -46,9 +46,10 @@ class HeroesListInteractor: HeroesListInteractorInputProtocol {
     func loadData() {
         
         dataManager?.getHeroes(success: {(heroes) in
+            self.presenter?.show(heroes: heroes)
             
         },failure: {error in
-
+            self.presenter?.show(error: error)
         } )
     }
 }

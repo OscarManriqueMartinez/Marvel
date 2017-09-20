@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroesCell" id="gTV-IL-0wX" customClass="HeroesCollectionViewCell" customModule="DemoMarvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="208" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="208" height="230"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-17-X2w">
+                        <rect key="frame" x="0.0" y="0.0" width="208" height="230"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4w-jE-U9i">
+                                <rect key="frame" x="0.0" y="0.0" width="208" height="208"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T4w-jE-U9i" secondAttribute="height" multiplier="1:1" id="AMA-hx-tlx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eky-AM-T5j">
+                                <rect key="frame" x="8" y="211" width="192" height="13"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93715304136276245" green="0.93731355667114258" blue="0.93714290857315063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T4w-jE-U9i" firstAttribute="top" secondItem="cJr-17-X2w" secondAttribute="top" id="0Z8-wO-8TR"/>
+                            <constraint firstAttribute="trailing" secondItem="T4w-jE-U9i" secondAttribute="trailing" id="3G2-Qv-dEB"/>
+                            <constraint firstAttribute="height" constant="230" id="ESq-re-jFC"/>
+                            <constraint firstItem="T4w-jE-U9i" firstAttribute="centerX" secondItem="cJr-17-X2w" secondAttribute="centerX" id="Swo-aC-2rG"/>
+                            <constraint firstItem="eky-AM-T5j" firstAttribute="top" secondItem="T4w-jE-U9i" secondAttribute="bottom" constant="3" id="UTx-xK-XXS"/>
+                            <constraint firstAttribute="width" constant="208" id="bkQ-Ny-j7y"/>
+                            <constraint firstAttribute="bottom" secondItem="eky-AM-T5j" secondAttribute="bottom" constant="6" id="cJw-HP-F18"/>
+                            <constraint firstAttribute="trailing" secondItem="eky-AM-T5j" secondAttribute="trailing" constant="8" id="fyB-R9-Xrl"/>
+                            <constraint firstItem="T4w-jE-U9i" firstAttribute="leading" secondItem="cJr-17-X2w" secondAttribute="leading" id="lbu-c9-wXj"/>
+                            <constraint firstItem="eky-AM-T5j" firstAttribute="leading" secondItem="cJr-17-X2w" secondAttribute="leading" constant="8" id="us6-oq-dhB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="cJr-17-X2w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1v2-3W-I1u"/>
+                <constraint firstAttribute="bottom" secondItem="cJr-17-X2w" secondAttribute="bottom" id="4rQ-wD-FS1"/>
+                <constraint firstAttribute="trailing" secondItem="cJr-17-X2w" secondAttribute="trailing" id="Jgf-3F-sXD"/>
+                <constraint firstItem="cJr-17-X2w" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xQ5-GW-olF"/>
+            </constraints>
+            <connections>
+                <outlet property="content" destination="cJr-17-X2w" id="mAp-4e-ttU"/>
+                <outlet property="imageView" destination="T4w-jE-U9i" id="2hs-jp-t6f"/>
+                <outlet property="titleLabel" destination="eky-AM-T5j" id="NKe-Fx-duj"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
