@@ -31,7 +31,27 @@ class BaseAPIClient {
     
     init() {
         
-        self.sesionManager = SessionManager()
+        
+        let serverTrustPolicy: ServerTrustPolicy! = ServerTrustPolicy.pinCertificates(
+            // Getting the certificate from the certificate data
+            certificates: ServerTrustPolicy.certificates(),
+            // Choose to validate the complete certificate chain, not only the certificate itself
+            validateCertificateChain: true,
+            // Check that the certificate mathes the host who provided it
+            validateHost: true
+        )
+        
+        let serverTrustPolicies: [String: ServerTrustPolicy]! = [
+            "api.myjson.com": serverTrustPolicy!,
+            ]
+        
+        self.sesionManager = SessionManager(
+            configuration: URLSessionConfiguration.default,
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
+        
+        
+//        self.sesionManager = SessionManager()
     }
     
     

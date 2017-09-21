@@ -12,9 +12,9 @@ import AlamofireImage
 
 class HeroesCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var content: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var content: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

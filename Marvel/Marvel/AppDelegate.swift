@@ -22,14 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let nav = UINavigationController()
         nav.setNavigationBarHidden(true, animated: false)
-        nav.viewControllers = [HeroesListWireframe().viewController]
+        nav.viewControllers = [HeroesListWireframe(dataManager: HeroesListDataManager(apiClient: HeroesListAPIClient(), heroes: nil)).viewController]
         window.rootViewController = nav
         
         
         self.window = window
         window.makeKeyAndVisible()
         
-        UIApplication.shared.statusBarStyle = .lightContent
+        configAppearance()
         
         return true
     }
@@ -57,5 +57,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    func configAppearance() {
+    
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = UIColor.redMarvel
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().tintColor = UIColor.white
+    }
 }
 

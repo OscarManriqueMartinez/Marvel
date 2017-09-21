@@ -30,7 +30,7 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
     
     private var presenter: HeroesListPresenterProtocol?
     private var heroes:[HeroViewModel]?
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Object lifecycle
     
@@ -39,6 +39,12 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
         
         configView()
         presenter?.loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -99,4 +105,10 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
         
         return CGSize(width: 150, height: 180);
     }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        presenter?.tap(positionCell:indexPath.row)
+    }
+
 }

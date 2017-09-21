@@ -11,37 +11,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroesCell" id="gTV-IL-0wX" customClass="HeroesCollectionViewCell" customModule="DemoMarvel" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="208" height="230"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroesCell" id="gTV-IL-0wX" customClass="HeroesCollectionViewCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="208" height="230"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJr-17-X2w">
-                        <rect key="frame" x="0.0" y="0.0" width="208" height="230"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4w-jE-U9i">
-                                <rect key="frame" x="0.0" y="0.0" width="208" height="208"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="T4w-jE-U9i" secondAttribute="height" multiplier="1:1" id="AMA-hx-tlx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eky-AM-T5j">
-                                <rect key="frame" x="8" y="211" width="192" height="13"/>
+                                <rect key="frame" x="8" y="153" width="134" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93715304136276245" green="0.93731355667114258" blue="0.93714290857315063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="cell" label="cell">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="T4w-jE-U9i" firstAttribute="top" secondItem="cJr-17-X2w" secondAttribute="top" id="0Z8-wO-8TR"/>
                             <constraint firstAttribute="trailing" secondItem="T4w-jE-U9i" secondAttribute="trailing" id="3G2-Qv-dEB"/>
-                            <constraint firstAttribute="height" constant="230" id="ESq-re-jFC"/>
                             <constraint firstItem="T4w-jE-U9i" firstAttribute="centerX" secondItem="cJr-17-X2w" secondAttribute="centerX" id="Swo-aC-2rG"/>
                             <constraint firstItem="eky-AM-T5j" firstAttribute="top" secondItem="T4w-jE-U9i" secondAttribute="bottom" constant="3" id="UTx-xK-XXS"/>
-                            <constraint firstAttribute="width" constant="208" id="bkQ-Ny-j7y"/>
                             <constraint firstAttribute="bottom" secondItem="eky-AM-T5j" secondAttribute="bottom" constant="6" id="cJw-HP-F18"/>
                             <constraint firstAttribute="trailing" secondItem="eky-AM-T5j" secondAttribute="trailing" constant="8" id="fyB-R9-Xrl"/>
                             <constraint firstItem="T4w-jE-U9i" firstAttribute="leading" secondItem="cJr-17-X2w" secondAttribute="leading" id="lbu-c9-wXj"/>

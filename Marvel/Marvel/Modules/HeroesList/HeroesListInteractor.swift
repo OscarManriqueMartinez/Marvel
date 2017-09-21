@@ -17,6 +17,7 @@ protocol HeroesListInteractorInputProtocol: class {
     
     func loadData()
 
+    func getHero(position:Int) -> Hero?
 }
 
 
@@ -51,5 +52,10 @@ class HeroesListInteractor: HeroesListInteractorInputProtocol {
         },failure: {error in
             self.presenter?.show(error: error)
         } )
+    }
+    
+    func getHero(position:Int) -> Hero?{
+    
+        return dataManager?.getHero(position:position)
     }
 }
