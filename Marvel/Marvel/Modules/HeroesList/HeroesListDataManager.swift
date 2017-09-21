@@ -29,9 +29,10 @@ class HeroesListDataManager: HeroesListDataManagerProtocol {
     
     // MARK: - Object lifecycle
     
-    init(apiClient: HeroesListAPIClientProtocol) {
+    init(apiClient: HeroesListAPIClientProtocol?, heroes: [Hero]?) {
         
         self.apiClient = apiClient
+        self.heroes = heroes
     }
     
     
@@ -50,6 +51,7 @@ class HeroesListDataManager: HeroesListDataManagerProtocol {
                 if let list = heroesList.superheroes {
                     self.heroes = list
                     success(list)
+                
                 }else{
                     failure(BaseError.generic)
                 }
@@ -58,6 +60,15 @@ class HeroesListDataManager: HeroesListDataManagerProtocol {
                 failure(error)
             })
         }
+    }
+    
+    func getHero(position:Int) -> Hero? {
+        
+        guard let hero = heroes?[position] else{
+            return nil
+        }
+        
+        return hero
     }
 }
 

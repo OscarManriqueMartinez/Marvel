@@ -60,6 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configAppearance() {
     
+        UIApplication.shared.isStatusBarHidden = false
+        
         UIApplication.shared.statusBarStyle = .lightContent
         
         UINavigationBar.appearance().isTranslucent = false

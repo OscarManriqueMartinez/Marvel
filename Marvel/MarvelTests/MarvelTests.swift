@@ -11,26 +11,69 @@ import XCTest
 
 class MarvelTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    private let spiderman: Hero = Hero(
+        groups: "Avengers, formerly the Secret Defenders, \"New Fantastic Four\", the Outlaws",
+        height: "1.77m",
+        name: "Spiderman",
+        realName: "Peter Benjamin Parker",
+        photo: "https://i.annihil.us/u/prod/marvel/i/mg/9/30/538cd33e15ab7/standard_xlarge.jpg",
+        power: "Peter can cling to most surfaces, has superhuman strength (able to lift 10 tons optimally) and is roughly 15 times more agile than a regular human.",
+        abilities: "Peter is an accomplished scientist, inventor and photographer.")
+    
+    private let hero2: Hero = Hero(
+        groups: "Avengers, formerly Queen\'s Vengeance, Starjammers",
+        height: "1.80m",
+        name: "Captain Marvel",
+        realName: "Carol Danvers",
+        photo: "https://i.annihil.us/u/prod/marvel/i/mg/c/10/537ba5ff07aa4/standard_xlarge.jpg",
+        power: "Ms. Marvel\'s current powers include flight, enhanced strength, durability and the ability to shoot concussive energy bursts from her hands.",
+        abilities: "Ms. Marvel is a skilled pilot & hand to hand combatant")
+    
+    
+    func testGetHeroCache() {
+        
+        // Given
+        let dataManager = HeroesListDataManager(apiClient: nil, heroes: [spiderman])
+        
+        // When
+        dataManager.getHeroes(success: { (heroes) in
+            
+            // Then
+            XCTAssertEqual(self.spiderman.name, heroes[0].name)
+        }){ _ in }
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testGetHeroApi() {
+        
+        // Given
+        let heroes = Heroes(superheroes: [hero2])
+        let testHeroesListAPIClient = TestHeroesListAPIClient(heroes: heroes)
+        let dataManager = HeroesListDataManager(apiClient: testHeroesListAPIClient, heroes: nil)
+        
+        // When
+        dataManager.getHeroes(success: { (heroes) in
+            
+            // Then
+            XCTAssertEqual(self.hero2.name, heroes[0].name)
+        }){ _ in }
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
+
+
+
+class TestHeroesListAPIClient: HeroesListAPIClient {
+    
+    let heroes: Heroes
+    
+    
+    init(heroes: Heroes) {
+
+        self.heroes = heroes
+    }
+    
+    override func getHeroes(success: @escaping (Heroes) -> Void, failure: @escaping (BaseError) -> Void) {
+        
+        success(self.heroes)
+    }
+}
+

@@ -10,15 +10,7 @@
 import UIKit
 
 
-protocol HeroesListWireframeProtocol: class {
-    
-    /**
-     * Add here your methods for communication PRESENTER -> WIREFRAME
-     */
-}
-
-
-class HeroesListWireframe: HeroesListWireframeProtocol {
+class HeroesListWireframe {
     
     // MARK: - Properties
     
@@ -27,18 +19,23 @@ class HeroesListWireframe: HeroesListWireframeProtocol {
         // Generating module components
         let viewController: HeroesListViewController = HeroesListViewController(nibName: "HeroesListView", bundle: nil)
         let interactor: HeroesListInteractor = createInteractor(with: dataManager)
-        let presenter: HeroesListPresenter = createPresenter(with: viewController, interactor: interactor)
+        let presenter: HeroesListPresenter = createPresenter(with: viewController, interactor: interactor, wireframe:detailWireframe)
         viewController.set(presenter: presenter)
         interactor.set(presenter: presenter)
         return viewController
     }
     
-    private var apiClient: HeroesListAPIClient{
-        return HeroesListAPIClient()
-    }
+//    private var apiClient: HeroesListAPIClient{
+//        return HeroesListAPIClient()
+//    }
     
-    private var dataManager: HeroesListDataManager{
-        return HeroesListDataManager(apiClient: apiClient)
+    private var dataManager: HeroesListDataManager
+//    private var dataManager: HeroesListDataManager{
+//        return HeroesListDataManager(apiClient: apiClient, heroes: nil)
+//    }
+    
+    private var detailWireframe: HeroDetailWireframe{
+        return HeroDetailWireframe()
     }
     
     
@@ -48,12 +45,13 @@ class HeroesListWireframe: HeroesListWireframeProtocol {
         return HeroesListInteractor(dataManager: dataManager)
     }
     
-    private func createPresenter(with view: HeroesListViewController, interactor: HeroesListInteractor ) -> HeroesListPresenter {
-        return HeroesListPresenter(view: view, interactor: interactor)
-    }    
+    private func createPresenter(with view: HeroesListViewController, interactor: HeroesListInteractor, wireframe:HeroDetailWireframe) -> HeroesListPresenter {
+        return HeroesListPresenter(view: view, interactor: interactor, wireframe:detailWireframe)
+    }
     
-    
-    // MARK: - HeroesListWireframeProtocol
+    init(dataManager: HeroesListDataManager) {
+        self.dataManager = dataManager
+    }
 }
 
 

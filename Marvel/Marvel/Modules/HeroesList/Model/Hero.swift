@@ -37,6 +37,18 @@ public struct Hero: Mappable {
   public init?(map: Map){
 
   }
+    
+    public init(groups: String, height: String, name: String, realName: String, photo: String, power: String, abilities: String){
+        
+        self.groups = groups
+        self.height = height
+        self.name = name
+        self.realName = realName
+        self.photo = photo
+        self.power = power
+        self.abilities = abilities
+    }
+    
 
   /// Map a JSON object to this class using ObjectMapper.
   ///

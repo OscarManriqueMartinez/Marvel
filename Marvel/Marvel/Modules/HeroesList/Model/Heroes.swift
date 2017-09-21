@@ -25,6 +25,12 @@ public struct Heroes: Mappable {
   public init?(map: Map){
 
   }
+    
+    public init(superheroes: [Hero]) {
+        
+        self.superheroes = superheroes
+    }
+    
 
   /// Map a JSON object to this class using ObjectMapper.
   ///
