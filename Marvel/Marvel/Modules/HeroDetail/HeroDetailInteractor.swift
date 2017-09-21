@@ -14,6 +14,8 @@ protocol HeroDetailInteractorInputProtocol: class {
      */
     
     func set(presenter: HeroDetailInteractorOutputProtocol)
+    
+    func loadData()
 }
 
 
@@ -22,6 +24,12 @@ class HeroDetailInteractor: HeroDetailInteractorInputProtocol {
     // MARK: - Properties
     
     private weak var presenter: HeroDetailInteractorOutputProtocol?
+    private var hero: Hero?
+    
+    init(hero: Hero?) {
+        
+        self.hero = hero
+    }
     
     
     // MARK: - HeroDetailInteractorInputProtocol
@@ -31,4 +39,10 @@ class HeroDetailInteractor: HeroDetailInteractorInputProtocol {
         self.presenter = presenter
     }
     
+    func loadData() {
+        
+        if let currentHero = hero {
+            presenter?.show(hero:currentHero)
+        }
+    }
 }

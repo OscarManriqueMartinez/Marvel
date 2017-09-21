@@ -30,7 +30,7 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
     
     private var presenter: HeroesListPresenterProtocol?
     private var heroes:[HeroViewModel]?
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Object lifecycle
     

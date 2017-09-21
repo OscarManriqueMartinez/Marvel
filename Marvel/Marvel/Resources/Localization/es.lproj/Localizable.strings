@@ -1,3 +1,10 @@
 
 //Errors
 "error.url.invalid" = "ERROR no se dispone de una URL válida";
+
+"groups" = "Grupos:";
+"height" = "Altura:";
+"name" = "Nombre:";
+"realName" = "Nombre real:";
+"power" = "Poderes:";
+"abilities" = "Habilidades:";

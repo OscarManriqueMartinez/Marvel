@@ -1,3 +1,10 @@
 
 //Errors
 "error.url.invalid" = "ERROR no valid URL is available";
+
+"groups" = "Groups:";
+"height" = "Height:";
+"name" = "Name:";
+"realName" = "Real name:";
+"power" = "Power:";
+"abilities" = "Abilities:";

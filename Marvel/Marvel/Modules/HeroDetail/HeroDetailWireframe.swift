@@ -28,18 +28,19 @@ class HeroDetailWireframe: HeroDetailWireframeProtocol {
         
         // Generating module components
         let viewController: HeroDetailViewController = HeroDetailViewController(nibName: "HeroDetailView", bundle: nil)
-        let interactor: HeroDetailInteractor = createInteractor()
+        let interactor: HeroDetailInteractor = createInteractor(hero: hero)
         let presenter: HeroDetailPresenter = createPresenter(with: viewController, interactor: interactor)
         viewController.set(presenter: presenter)
         interactor.set(presenter: presenter)
         return viewController
     }
     
+    private var hero: Hero?
     
     // MARK: - Private methods
     
-    private func createInteractor() -> HeroDetailInteractor {
-        return HeroDetailInteractor()
+    private func createInteractor(hero: Hero?) -> HeroDetailInteractor {
+        return HeroDetailInteractor(hero: hero)
     }
     
     private func createPresenter(with view: HeroDetailViewController, interactor: HeroDetailInteractor ) -> HeroDetailPresenter {
@@ -50,6 +51,8 @@ class HeroDetailWireframe: HeroDetailWireframeProtocol {
     // MARK: - HeroDetailWireframeProtocol
     
     func present(hero: Hero){
+        
+        self.hero = hero
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let window = appDelegate.window

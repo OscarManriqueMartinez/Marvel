@@ -12,6 +12,8 @@ protocol HeroDetailPresenterProtocol: class {
     /**
      * Add here your methods for communication VIEW -> PRESENTER
      */
+    
+    func loadData()
 }
 
 protocol HeroDetailInteractorOutputProtocol: class {
@@ -19,6 +21,8 @@ protocol HeroDetailInteractorOutputProtocol: class {
     /**
      * Add here your methods for communication INTERACTOR -> PRESENTER
      */
+    
+    func show(hero: Hero)
 }
 
 
@@ -44,9 +48,15 @@ class HeroDetailPresenter: HeroDetailPresenterProtocol, HeroDetailInteractorOutp
     
     // MARK: - HeroDetailPresenterProtocol
     
-    
+    func loadData() {
+        
+        interactor?.loadData()
+    }
     
     // MARK: - HeroDetailInteractorOutputProtocol
     
-    
+    func show(hero: Hero) {
+        
+        view?.show(hero: hero)
+    }
 }
