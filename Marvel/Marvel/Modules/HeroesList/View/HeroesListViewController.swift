@@ -41,6 +41,12 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
         presenter?.loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     
     // MARK: - HeroesListViewProtocol
     
@@ -99,4 +105,10 @@ class HeroesListViewController: UIViewController, HeroesListViewControllerProtoc
         
         return CGSize(width: 150, height: 180);
     }
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        presenter?.tap(positionCell:indexPath.row)
+    }
+
 }

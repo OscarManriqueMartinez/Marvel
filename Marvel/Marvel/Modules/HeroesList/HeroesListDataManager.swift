@@ -15,6 +15,7 @@ protocol HeroesListDataManagerProtocol: class {
     
     func getHeroes(success: @escaping ([Hero]) -> Void, failure: @escaping (BaseError) -> Void)
 
+    func getHero(position:Int) -> Hero?
 }
 
 

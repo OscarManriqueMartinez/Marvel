@@ -14,6 +14,8 @@ protocol HeroesListPresenterProtocol: class {
      */
     
     func loadData()
+    
+    func tap(positionCell:Int)
 }
 
 protocol HeroesListInteractorOutputProtocol: class {
@@ -34,17 +36,16 @@ class HeroesListPresenter: HeroesListPresenterProtocol, HeroesListInteractorOutp
     
     private weak var view: HeroesListViewControllerProtocol?
     private var interactor: HeroesListInteractorInputProtocol?
-    
-//    Wireframe of the next view
-//    private var wireframe: NextViewWireframeProtocol?
+    private var wireframe: HeroDetailWireframeProtocol?
     
     
     // MARK: - Object lifecycle
     
-    init(view: HeroesListViewControllerProtocol, interactor: HeroesListInteractorInputProtocol) {
+    init(view: HeroesListViewControllerProtocol, interactor: HeroesListInteractorInputProtocol, wireframe:HeroDetailWireframe) {
         
         self.view = view
         self.interactor = interactor
+        self.wireframe = wireframe
     }
     
     
@@ -53,6 +54,13 @@ class HeroesListPresenter: HeroesListPresenterProtocol, HeroesListInteractorOutp
     func loadData() {
         
         interactor?.loadData()
+    }
+    
+    func tap(positionCell:Int) {
+        
+        if let hero = interactor?.getHero(position:positionCell) {
+            wireframe?.present(hero: hero)
+        }
     }
     
     
